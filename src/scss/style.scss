@@ -108,6 +108,45 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.button {
+  display: inline-block;
+  background-color: $firstColor;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: $h2FontSize;
+  font-weight: $fontMedium;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $firstColorAlt;
+  }
+}
+
+.button__icon {
+  transition: 0.3s;
+}
+
+.button:hover .button__icon {
+  transform: translateX(0.25rem);
+}
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.button--link {
+  color: $firstColor;
+  font-weight: $fontMedium;
+}
+
+.button--link:hover .button__icon {
+  transform: translateX(0.25rem);
+}
+
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===========================================================================================
 
 //<ОБОЛОЧКА>===========================================================================================================
@@ -149,7 +188,222 @@ img {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+.home {
+  padding: 3.5rem 0 2rem;
+}
 
-//===================================================================================================================================
+.home__container {
+  position: relative;
+  row-gap: 2rem;
+}
 
+.home__img {
+  width: 200px;
+  justify-content: center;
+}
+
+.home__title {
+  font-size: $bigFontSize;
+  line-height: 140%;
+  margin-bottom: $mb-1;
+}
+
+.home__description {
+  margin-bottom: $mb-2-5;
+}
+
+.home__social {
+  position: absolute;
+  top: 2rem;
+  right: -1rem;
+  display: grid;
+  justify-items: center;
+  row-gap: 3.5rem;
+}
+
+.home__social-follow {
+  font-weight: $fontMedium;
+  font-size: $smallerFontSize;
+  color: $firstColor;
+  position: relative;
+  transform: rotate(90deg);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0.8rem;
+    height: 2px;
+    background-color: $firstColor;
+    right: -18%;
+    top: 50%;
+  }
+}
+
+.home__social-links {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.home__social-link {
+  font-size: 1rem;
+  color: $firstColor;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateX(0.25rem);
+  }
+}
+
+.about__container {
+  row-gap: 2rem;
+}
+
+.about__img {
+  width: 280px;
+  justify-self: center;
+}
+
+.about__title {
+  margin-bottom: $mb-1;
+}
+
+.about__description {
+  margin-bottom: $mb-2;
+
+  a {
+    color: $textColor;
+    text-decoration: underline;
+
+    &:hover {
+      color: $textColorLight;
+    }
+  }
+}
+
+.about__details {
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: $mb-2-5;
+}
+
+.about__details-description {
+  display: inline-flex;
+  column-gap: 0.5rem;
+  font-size: $smallFontSize;
+}
+
+.about__details-icon {
+  font-size: 1rem;
+  color: $firstColor;
+  margin-top: 0.15rem;
+}
+
+.steps__bg {
+  background-color: $firstColor;
+  padding: 3rem 2rem 2rem;
+  border-radius: 1rem;
+}
+
+.steps__container {
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.steps__title {
+  color: #fff;
+}
+
+.steps__card {
+  background-color: $containerColor;
+  padding: 2.5rem 3rem 2rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.steps__card-number {
+  display: inline-block;
+  background-color: $firstColorAlt;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: $h2FontSize;
+  margin-bottom: $mb-1-5;
+  transition: 0.3s;
+}
+
+.steps__card-title {
+  font-size: $h3FontSize;
+  margin-bottom: $mb-0-5;
+}
+
+.steps__card-description {
+  font-size: $smallFontSize;
+}
+
+.steps__card:hover .steps__card-number {
+  transform: translateY(-0.25rem);
+}
+
+.product__description {
+  text-align: center;
+}
+
+.product__container {
+  padding: 3rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 3rem;
+}
+
+.product__card {
+  display: grid;
+  position: relative;
+}
+
+.product__img {
+  position: relative;
+  width: 120px;
+  justify-self: center;
+  margin-bottom: $mb-0-75;
+  transition: 0.3s;
+}
+
+.product__title,
+.product__price {
+  font-size: $smallFontSize;
+  font-weight: $fontSemiBold;
+  color: $titleColor;
+}
+
+.product__title {
+  margin-bottom: 0.25rem;
+}
+
+.product__button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: $firstColor;
+  color: #fff;
+  padding: 0.25rem;
+  border-radius: 0.35rem;
+  font-size: 1.15rem;
+
+  &:hover {
+    background-color: $firstColorAlt;
+  }
+}
+
+.product__circle {
+  width: 90px;
+  height: 90px;
+  background-color: $firstColorLight;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+
+.product__card:hover .product__img {
+  transform: translateY(-0.5rem);
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
