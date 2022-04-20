@@ -406,4 +406,79 @@ img {
 .product__card:hover .product__img {
   transform: translateY(-0.5rem);
 }
+
+.questions {
+  background-color: $firstColorLight;
+}
+
+.questions__container {
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.questions__group {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.questions__item {
+  background-color: $containerColor;
+  border-radius: 0.25rem;
+
+  &:hover {
+    box-shadow: 0 2px 8px hsla($hue, 4%, 15%, 0.15);
+  }
+}
+
+.questions__item-title {
+  font-size: $smallFontSize;
+  font-weight: $fontMedium;
+}
+
+.questions__header {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+}
+
+.questions__icon {
+  font-size: 1.25rem;
+  color: $titleColor;
+}
+
+.questions__content {
+  overflow: hidden;
+  height: 0;
+}
+
+.questions__description {
+  font-size: $smallerFontSize;
+  padding: 0 1.25rem 1.25rem 2.5rem;
+}
+
+.questions__item,
+.questions__header,
+.questions__item-title,
+.questions__icon,
+.questions__description,
+.questions__content {
+  transition: 0.3s;
+}
+
+.accordion-open .questions__header,
+.accordion-open .questions__content {
+  background-color: $firstColor;
+}
+
+.accordion-open .questions__item-title,
+.accordion-open .questions__description,
+.accordion-open .questions__icon {
+  color: #fff;
+}
+
+.accordion-open .questions__icon {
+  transform: rotate(45deg);
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
