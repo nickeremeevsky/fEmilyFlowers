@@ -6,56 +6,56 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 //</Подключаем шрифты>=======================================================================================
 
-$fontFamily: 'Nunito', sans-serif;
-
-$bigFontSize: 2rem;
-$h1FontSize: 1.5rem;
-$h2FontSize: 1.25rem;
-$h3FontSize: 1rem;
-$normalFontSize: 0.938rem;
-$smallFontSize: 0.813rem;
-$smallerFontSize: 0.75rem;
-
-$fontMedium: 500;
-$fontSemiBold: 600;
-
 //</ШРИФТЫ>=======================================================================================================
 
 //<ПЕРЕМЕННЫЕ>==========================================================================================================
+:root {
+  --headerHeight: 3.5rem; // 56px
 
-$headerHeight: 3.5rem; // 56px
+  --hue: 152;
+  --firstColor: hsl(var(--hue), 24%, 32%);
+  --firstColorAlt: hsl(var(--hue), 24%, 28%);
+  --firstColorLight: hsl(var(--hue), 24%, 66%);
+  --firstColorLighten: hsl(var(--hue), 24%, 92%);
+  --titleColor: hsl(var(--hue), 4%, 15%);
+  --textColor: hsl(var(--hue), 4%, 35%);
+  --textColorLight: hsl(var(--hue), 4%, 55%);
+  --bodyColor: hsl(var(--hue), 0%, 100%);
+  --containerColor: #fff;
 
-$hue: 152;
-$firstColor: hsl($hue, 24%, 32%);
-$firstColorAlt: hsl($hue, 24%, 28%);
-$firstColorLight: hsl($hue, 24%, 66%);
-$firstColorLighten: hsl($hue, 24%, 92%);
-$titleColor: hsl($hue, 4%, 15%);
-$textColor: hsl($hue, 4%, 35%);
-$textColorLight: hsl($hue, 4%, 55%);
-$bodyColor: hsl($hue, 0%, 100%);
-$containerColor: #fff;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
 
-$mb-0-5: 0.5rem;
-$mb-0-75: 0.75rem;
-$mb-1: 1rem;
-$mb-1-5: 1.5rem;
-$mb-2: 2rem;
-$mb-2-5: 2.5rem;
+  --zTooltip: 10;
+  --zFixed: 100;
 
-$zTooltip: 10;
-$zFixed: 100;
+  @media screen and (min-width: 968px) {
+    --bigFontSize: 3.5rem;
+    --h1FontSize: 2.25rem;
+    --h2FontSize: 1.5rem;
+    --h3FontSize: 1.25rem;
+    --normalFontSize: 1rem;
+    --smallFontSize: 0.875rem;
+    --smallerFontSize: 0.813rem;
+  }
 
-@media screen and (min-width: 968px) {
-  $bigFontSize: 3.5rem;
-  $h1FontSize: 2.25rem;
-  $h2FontSize: 1.5rem;
-  $h3FontSize: 1.25rem;
-  $normalFontSize: 1rem;
-  $smallFontSize: 0.875rem;
-  $smallerFontSize: 0.813rem;
+  --fontFamily: 'Nunito', sans-serif;
+
+  --bigFontSize: 2rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallerFontSize: 0.75rem;
+
+  --fontMedium: 500;
+  --fontSemiBold: 600;
 }
-
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===========================================================================================
@@ -73,14 +73,15 @@ body,
 button,
 input,
 textarea {
-  font-family: $fontFamily;
-  font-size: $normalFontSize;
+  font-family: var(--fontFamily);
+  font-size: var(--normalFontSize);
 }
 
 body {
-  margin: $headerHeight 0 0 0;
-  background-color: $bodyColor;
-  color: $textColor;
+  margin: var(--headerHeight) 0 0 0;
+  background-color: var(--bodyColor);
+  color: var(--textColor);
+  transition: 0.4s;
 }
 
 button {
@@ -92,8 +93,8 @@ button {
 h1,
 h2,
 h3 {
-  color: $titleColor;
-  font-weight: $fontSemiBold;
+  color: var(--titleColor);
+  font-weight: var(--fontSemiBold);
 }
 
 ul {
@@ -111,16 +112,16 @@ img {
 
 .button {
   display: inline-block;
-  background-color: $firstColor;
+  background-color: var(--firstColor);
   color: #fff;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
-  font-size: $h2FontSize;
-  font-weight: $fontMedium;
+  font-size: var(--h2FontSize);
+  font-weight: var(--fontMedium);
   transition: 0.3s;
 
   &:hover {
-    background-color: $firstColorAlt;
+    background-color: var(--firstColorAlt);
   }
 }
 
@@ -139,8 +140,8 @@ img {
 }
 
 .button--link {
-  color: $firstColor;
-  font-weight: $fontMedium;
+  color: var(--firstColor);
+  font-weight: var(--fontMedium);
 }
 
 .button--link:hover .button__icon {
@@ -156,8 +157,8 @@ img {
 
 .section__title,
 .section__title-center {
-  font-size: $h2FontSize;
-  margin-bottom: $mb-2;
+  font-size: var(--h2FontSize);
+  margin-bottom: var(--mb-2);
   line-height: 140%;
 }
 
@@ -167,8 +168,8 @@ img {
 
 .container {
   max-width: 968px;
-  margin-left: $mb-1-5;
-  margin-right: $mb-1-5;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
 }
 
 .main {
@@ -184,10 +185,32 @@ img {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 @import 'header';
-// @import 'footer';
+@import 'footer';
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+body.dark-theme {
+  --firstColorDark: hsl(var(--hue), 8%, 20%);
+  --titleColor: hsl(var(--hue), 4%, 95%);
+  --textColor: hsl(var(--hue), 4%, 75%);
+  --bodyColor: hsl(var(--hue), 8%, 12%);
+  --containerColor: hsl(var(--hue), 8%, 16%);
+}
+
+.dark-theme .steps__bg,
+.dark-theme .questions {
+  background-color: var(--firstColorDark);
+}
+
+.dark-theme .product__circle,
+.dark-theme .footer__subscribe {
+  background-color: var(--containerColor);
+}
+
+.dark-theme .scroll-header {
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 4%, 0.3);
+}
+
 .home {
   padding: 3.5rem 0 2rem;
 }
@@ -203,13 +226,13 @@ img {
 }
 
 .home__title {
-  font-size: $bigFontSize;
+  font-size: var(--bigFontSize);
   line-height: 140%;
-  margin-bottom: $mb-1;
+  margin-bottom: var(--mb-1);
 }
 
 .home__description {
-  margin-bottom: $mb-2-5;
+  margin-bottom: var(--mb-2-5);
 }
 
 .home__social {
@@ -222,9 +245,9 @@ img {
 }
 
 .home__social-follow {
-  font-weight: $fontMedium;
-  font-size: $smallerFontSize;
-  color: $firstColor;
+  font-weight: var(--fontMedium);
+  font-size: var(--smallerFontSize);
+  color: var(--firstColor);
   position: relative;
   transform: rotate(90deg);
 
@@ -233,7 +256,7 @@ img {
     position: absolute;
     width: 0.8rem;
     height: 2px;
-    background-color: $firstColor;
+    background-color: var(--firstColor);
     right: -18%;
     top: 50%;
   }
@@ -247,7 +270,7 @@ img {
 
 .home__social-link {
   font-size: 1rem;
-  color: $firstColor;
+  color: var(--firstColor);
   transition: 0.3s;
 
   &:hover {
@@ -265,18 +288,18 @@ img {
 }
 
 .about__title {
-  margin-bottom: $mb-1;
+  margin-bottom: var(--mb-1);
 }
 
 .about__description {
-  margin-bottom: $mb-2;
+  margin-bottom: var(--mb-2);
 
   a {
-    color: $textColor;
+    color: var(--textColor);
     text-decoration: underline;
 
     &:hover {
-      color: $textColorLight;
+      color: var(--textColorLight);
     }
   }
 }
@@ -284,23 +307,23 @@ img {
 .about__details {
   display: grid;
   row-gap: 1rem;
-  margin-bottom: $mb-2-5;
+  margin-bottom: var(--mb-2-5);
 }
 
 .about__details-description {
   display: inline-flex;
   column-gap: 0.5rem;
-  font-size: $smallFontSize;
+  font-size: var(--smallFontSize);
 }
 
 .about__details-icon {
   font-size: 1rem;
-  color: $firstColor;
+  color: var(--firstColor);
   margin-top: 0.15rem;
 }
 
 .steps__bg {
-  background-color: $firstColor;
+  background-color: var(--firstColor);
   padding: 3rem 2rem 2rem;
   border-radius: 1rem;
 }
@@ -315,29 +338,29 @@ img {
 }
 
 .steps__card {
-  background-color: $containerColor;
+  background-color: var(--containerColor);
   padding: 2.5rem 3rem 2rem 1.5rem;
   border-radius: 1rem;
 }
 
 .steps__card-number {
   display: inline-block;
-  background-color: $firstColorAlt;
+  background-color: var(--firstColorAlt);
   color: #fff;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
-  font-size: $h2FontSize;
-  margin-bottom: $mb-1-5;
+  font-size: var(--h2FontSize);
+  margin-bottom: var(--mb-1-5);
   transition: 0.3s;
 }
 
 .steps__card-title {
-  font-size: $h3FontSize;
-  margin-bottom: $mb-0-5;
+  font-size: var(--h3FontSize);
+  margin-bottom: var(--mb-0-5);
 }
 
 .steps__card-description {
-  font-size: $smallFontSize;
+  font-size: var(--smallFontSize);
 }
 
 .steps__card:hover .steps__card-number {
@@ -361,17 +384,17 @@ img {
 
 .product__img {
   position: relative;
-  width: 120px;
+  width: 150px;
   justify-self: center;
-  margin-bottom: $mb-0-75;
+  margin-bottom: var(--mb-0-75);
   transition: 0.3s;
 }
 
 .product__title,
 .product__price {
-  font-size: $smallFontSize;
-  font-weight: $fontSemiBold;
-  color: $titleColor;
+  font-size: var(--smallFontSize);
+  font-weight: var(--fontSemiBold);
+  color: var(--titleColor);
 }
 
 .product__title {
@@ -382,21 +405,21 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: $firstColor;
+  background-color: var(--firstColor);
   color: #fff;
   padding: 0.25rem;
   border-radius: 0.35rem;
   font-size: 1.15rem;
 
   &:hover {
-    background-color: $firstColorAlt;
+    background-color: var(--firstColorAlt);
   }
 }
 
 .product__circle {
-  width: 90px;
-  height: 90px;
-  background-color: $firstColorLight;
+  width: 100px;
+  height: 100px;
+  background-color: var(--firstColorLight);
   border-radius: 50%;
   position: absolute;
   top: 20%;
@@ -408,7 +431,7 @@ img {
 }
 
 .questions {
-  background-color: $firstColorLight;
+  background-color: var(--firstColorLight);
 }
 
 .questions__container {
@@ -422,17 +445,17 @@ img {
 }
 
 .questions__item {
-  background-color: $containerColor;
+  background-color: var(--containerColor);
   border-radius: 0.25rem;
 
   &:hover {
-    box-shadow: 0 2px 8px hsla($hue, 4%, 15%, 0.15);
+    box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, 0.15);
   }
 }
 
 .questions__item-title {
-  font-size: $smallFontSize;
-  font-weight: $fontMedium;
+  font-size: var(--smallFontSize);
+  font-weight: var(--fontMedium);
 }
 
 .questions__header {
@@ -445,7 +468,7 @@ img {
 
 .questions__icon {
   font-size: 1.25rem;
-  color: $titleColor;
+  color: var(--titleColor);
 }
 
 .questions__content {
@@ -454,7 +477,7 @@ img {
 }
 
 .questions__description {
-  font-size: $smallerFontSize;
+  font-size: var(--smallerFontSize);
   padding: 0 1.25rem 1.25rem 2.5rem;
 }
 
@@ -469,7 +492,7 @@ img {
 
 .accordion-open .questions__header,
 .accordion-open .questions__content {
-  background-color: $firstColor;
+  background-color: var(--firstColor);
 }
 
 .accordion-open .questions__item-title,
@@ -480,5 +503,134 @@ img {
 
 .accordion-open .questions__icon {
   transform: rotate(45deg);
+}
+
+.contact__container {
+  row-gap: 3.5rem;
+}
+
+.contact__data {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.contact__subtitle {
+  font-size: var(--normalFontSize);
+  font-weight: var(--fontMedium);
+  color: var(--textColor);
+  margin-bottom: var(--mb-0-5);
+}
+
+.contact__description {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--titleColor);
+  font-weight: var(--fontMedium);
+
+  a {
+    color: var(--titleColor);
+
+    &:hover {
+      color: var(--textColorLight);
+    }
+  }
+}
+
+.contact__icon {
+  font-size: 1.25rem;
+}
+
+.contact__inputs {
+  display: grid;
+  row-gap: 2rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+.contact__content {
+  position: relative;
+  height: 3rem;
+  border-bottom: 1px solid var(--textColorLight);
+}
+
+.contact__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 0;
+  background: none;
+  border: none;
+  outline: none;
+  z-index: 1;
+}
+
+.contact__label {
+  position: absolute;
+  top: 0.75rem;
+  width: 100%;
+  font-size: var(--smallFontSize);
+  color: var(--textColorLight);
+  transition: 0.3s;
+}
+
+.contact__area {
+  height: 7rem;
+}
+
+.contact__area textarea {
+  resize: none;
+}
+
+.contact__input:focus + .contact__label {
+  top: -0.75rem;
+  left: 0;
+  font-size: var(--smallerFontSize);
+  z-index: 10;
+}
+
+.contact__input:not(:placeholder-shown).contact__input:not(:focus)
+  + .contact__label {
+  top: -0.75rem;
+  font-size: var(--smallerFontSize);
+  z-index: 10;
+}
+
+.scrollup {
+  position: fixed;
+  background-color: var(--firstColor);
+  right: 1rem;
+  bottom: -30%;
+  display: inline-flex;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  z-index: var(--zTooltip);
+  opacity: 0.8;
+  transition: 0.4s;
+
+  &:hover {
+    background-color: var(--firstColorAlt);
+    opacity: 1;
+  }
+}
+
+.scrollup__icon {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background: hsl(var(--hue), 4%, 53%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--hue), 4%, 29%);
+  border-radius: 0.5rem;
 }
 //</ОСНОВНОЙ БЛОК>====================================================================================================
