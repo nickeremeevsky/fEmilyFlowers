@@ -14,7 +14,8 @@
   "author": "Nick Eremeevsky",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "scrollreveal": "^4.0.9"
   },
   "devDependencies": {
     "browser-sync": "latest",
